@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="btname">Follow to second activity</string>
+    <string name="bt1name">Send Notifications</string>
+    <string name="bt2name">Send Data</string>
+    <string name="notiftitle">Something...</string>
+    <string name="notiftext">Follow to Second Activity</string>
+</resources>
