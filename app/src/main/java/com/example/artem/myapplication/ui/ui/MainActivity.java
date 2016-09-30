@@ -28,38 +28,38 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Intent intent = new Intent();
-        intent.putExtra("name", Config.txt);
-        setResult(RESULT_OK, intent);
+        //Intent intent = new Intent();
+        //intent.putExtra("name", Config.txt);
+        //setResult(RESULT_OK, intent);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        viewText = (TextView) findViewById(R.id.txt1);
+        setContentView(R.layout.activity_main);//layout
+        viewText = (TextView) findViewById(R.id.txt1);//поиск по id
         btn1 = (Button) findViewById(R.id.sendnotification);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {// обработчик событий
                 //String notiftitle, notiftext;
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class); //n
                 Context context = getApplicationContext();
 
-                PendingIntent contentIntent = PendingIntent.getActivity(context,
-                        0, intent,
+                PendingIntent contentIntent = PendingIntent.getActivity(context,//o
+                        0, intent,//t
                         PendingIntent.FLAG_CANCEL_CURRENT);
 
                 NotificationManager nm = (NotificationManager) context
-                        .getSystemService(Context.NOTIFICATION_SERVICE);
+                        .getSystemService(Context.NOTIFICATION_SERVICE);//i
 
-                Notification.Builder builder = new Notification.Builder(context);
+                Notification.Builder builder = new Notification.Builder(context);//f
 
-                builder.setContentIntent(contentIntent)
+                builder.setContentIntent(contentIntent)//i
                         .setSmallIcon(R.drawable.ic_launcher)
-                        .setWhen(System.currentTimeMillis())
-                        .setContentTitle(String.valueOf(R.string.notiftitle))
-                        .setContentText(String.valueOf(R.string.notiftext))
-                        .setAutoCancel(true);
+                        .setWhen(System.currentTimeMillis())//c
+                        .setContentTitle(String.valueOf(R.string.notiftitle))//a
+                        .setContentText(String.valueOf(R.string.notiftext))//t
+                        .setAutoCancel(true);//i
 
-                Notification notification = builder.getNotification();
-                nm.notify(NOTIFY_ID, notification);
+                Notification notification = builder.getNotification();//o
+                nm.notify(NOTIFY_ID, notification);//n
             }
         });
 
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent result = new Intent(MainActivity.this, SecondActivity.class);
-                startActivityForResult(result, 0);
+                startActivityForResult(result, 0);//переход к следующей активности
             }
         });
 
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 viewText.setText(Config.txt);
             }
-        });
+        });//вывод текста
     }
 
     @Override

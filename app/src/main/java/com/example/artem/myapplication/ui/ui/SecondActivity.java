@@ -26,14 +26,14 @@ public class SecondActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        setContentView(R.layout.activity_second);//layout
         editText = (EditText) findViewById(R.id.edit_text);
-        btn = (Button) findViewById(R.id.back);
+        btn = (Button) findViewById(R.id.back);//поиск по id
         btn1 = (Button) findViewById(R.id.add_data);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this, MainActivity.class);
+                Intent intent = new Intent(SecondActivity.this, MainActivity.class);//переход к прошлой активности
                 startActivity(intent);
                 finish();
             }
@@ -41,7 +41,7 @@ public class SecondActivity extends AppCompatActivity{
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Config.txt = editText.getText().toString();
+                Config.txt = editText.getText().toString();//сохранение результата
             }
         });
     }
